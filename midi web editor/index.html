@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OBXD Midi CC Controller</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/estilos.css">
+<script src="./jquery-3.7.1.js"></script>
+</head>
+<body>
+    
+ 
+<div class="container-fluid " id="layout">
+    <div class="row">
+        <div class="col-sm-3">
+            <img src="./images/descarga.jpg" alt="" class="img-fluid" >
+        </div>
+        <div class="col-sm-9 align-self-center">
+            <p><br>WMCCC es un proyecto para controlar instrumentos musicales MIDI compatibles desde la web con
+                diferentes interfaces artísticas.</p>
+        </div>
+
+    </div>
+
+</div>    
+
+<div class="container-fluid" id="cuerpo">
+<video src="animation.mp4" type=”video/mp4″ autoplay loop allowfulscreen muted></video>
+<div class="row justify-content-center"  > 
+<div  class="col-auto" >
+    
+
+<h4 class="text-center">OBXD MIDI CC CONTROLLER</h4>
+<div class="rangos">
+    <label for=" ASPLAYEDALLOCATION">CC21 (ASPLAYEDALLOCATION) : </label>
+    <input type="range" id="ASPLAYEDALLOCATION" min="0" max="127" value="64">
+    <input type="text" name="ASPLAYEDALLOCATIONVAL" id="ASPLAYEDALLOCATIONVAL" value="64" size="3" maxlength="3">
+</div>
+
+<div class="rangos">
+    <label for="BANDPASS">CC105 (BANDPASS) :</label>
+    <input type="range" id="BANDPASS" min="0" max="127" value="64">
+    <input type="text" name="BANDPASSVAL" id="BANDPASSVAL" value="64"  size="3" maxlength="3">
+</div>
+
+<div class="rangos">
+    <label for="BENDLFORATE">CC75 (BENDLFORATE) :</label>
+    <input type="range" id="BENDLFORATE" min="0" max="127" value="64">
+    <input type="text" name="BENDLFORATEVAL" id="BENDLFORATEVAL" value="64" size="3" maxlength="3">
+</div>
+
+<div class="rangos">
+    <label for="BENDOSC2">CC34 (BENDOSC2) :</label>
+    <input type="range" id="BENDOSC2" min="0" max="127" value="64">
+    <input type="text" name="BENDOSC2VAL" id="BENDOSC2VAL" value="64" size="3" maxlength="3">
+
+</div>
+
+<div class="rangos">
+    <label for="BRIGHTNESS">CC62 (BRIGHTNESS) :</label>
+    <input type="range" id="BRIGHTNESS" min="0" max="127" value="64">
+    <input type="text" name="BRIGHTNESSVAL" id="BRIGHTNESSVAL" value="64" size="3" maxlength="3">
+</div>
+
+<div class="rangos">
+    <label for="BENDRANGE">CC118 (BENDRANGE) :</label>
+    <input type="range" id="BENDRANGE" min="0" max="127" value="64">
+    <input type="text" name="BENDRANGEVAL" id="BENDRANGEVAL" value="64" size="3" maxlength="3">
+</div>
+
+
+<div class="rangos">
+</br>
+    <label for="midi-output-select">SELECCIONAR DISPOSITIVO DE SALIDA MIDI : </label>
+    <select id="midi-output-select"></select>
+</div>
+</div>
+<script src="midi_controller.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#ASPLAYEDALLOCATION').change(function () {
+            $('#ASPLAYEDALLOCATIONVAL').val($(this).val());
+        });
+
+        $('#BANDPASS').change(function () {
+            $('#BANDPASSVAL').val($(this).val());
+        });
+
+        $('#BENDLFORATE').change(function () {
+            $('#BENDLFORATEVAL').val($(this).val());
+        });
+
+        $('#BENDOSC2').change(function () {
+            $('#BENDOSC2VAL').val($(this).val());
+        });
+
+          $('#BRIGHTNESS').change(function () {
+            $('#BRIGHTNESSVAL').val($(this).val());
+        });
+
+        $('#BENDRANGE').change(function () {
+            $('#BENDRANGEVAL').val($(this).val());
+        });
+
+
+    });
+</script>
+
+</div>
+</div>
+</div>
+</div>
+
+</body>
+
+</html>
